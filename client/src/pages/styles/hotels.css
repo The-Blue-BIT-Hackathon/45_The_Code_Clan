@@ -1,0 +1,7 @@
+.hotelImg {
+}
+
+.hotelcard {
+  display: flex;
+  flex-direction: row;
+}

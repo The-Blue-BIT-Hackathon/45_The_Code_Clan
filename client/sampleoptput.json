@@ -1,0 +1,46 @@
+{
+    "status": true,
+    "message": "Success",
+    "timestamp": 1678537529103,
+    "data": [
+        {
+            "title": "<b>Matheran</b>",
+            "geoId": "503701",
+            "documentId": "503701",
+            "trackingItems": "geo",
+            "secondaryText": "Maharashtra, India"
+        },
+        {
+            "title": "<b>The Byke Heritage - Matheran</b>",
+            "geoId": "1162617",
+            "documentId": "1162617",
+            "trackingItems": "hotel",
+            "secondaryText": "Matheran, India",
+            "image": {
+                "__typename": "AppPresentation_PhotoItemSizeDynamic",
+                "maxHeight": 662,
+                "maxWidth": 1000,
+                "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/b2/8a/95/hotel.jpg?w={width}&h={height}&s=1"
+            }
+        },
+        {
+            "title": "<b>MTDC, Matheran</b>",
+            "geoId": "3294724",
+            "documentId": "3294724",
+            "trackingItems": "hotel",
+            "secondaryText": "Matheran, India",
+            "image": {
+                "__typename": "AppPresentation_PhotoItemSizeDynamic",
+                "maxHeight": 1200,
+                "maxWidth": 1600,
+                "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/94/53/39/mtdc-matheran.jpg?w={width}&h={height}&s=1"
+            }
+        },
+        {
+            "title": "Add a missing place",
+            "geoId": null,
+            "documentId": null,
+            "trackingItems": null
+        }
+    ]
+}
