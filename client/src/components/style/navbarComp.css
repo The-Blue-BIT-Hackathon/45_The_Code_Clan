@@ -1,0 +1,28 @@
+.navbar{
+    height: 10vh;
+    padding: 0px 5vw ;
+    
+}
+
+.nav-link{
+    font-family: 'Signika', sans-serif;
+    font-size: 1.2rem;
+}
+
+.navbar .navbar-brand{
+    font-size: 1.6rem;
+    font-family: 'Rampart One', cursive;
+    font-weight: 700;
+    color: white;
+}
+
+.navbar-nav{
+margin:auto;
+}
+
+.active{
+    color: azure;
+}
+.nav-item{
+    margin: 0px 17px;
+}

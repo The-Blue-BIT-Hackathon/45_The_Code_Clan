@@ -1,0 +1,36 @@
+.mainSection{
+    height: 85vh;
+    margin-top:10vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-image: url("../../images/bag2.jpg");
+    background-position: center;
+}
+
+.placeForm{
+    background-color:  #92f1ff5e;
+    width: 70%;
+    margin: auto;
+    height: 70%;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.form-heading{
+    display: inline;
+    font-size: 1.8rem;
+    font-family: 'Rubik', sans-serif;
+    color:slategrey;
+    font-weight: 500;
+}
+@media(max-width:800px){
+    .form-heading{
+        font-size: 1.2rem;
+    } 
+}
+@media(max-width:600px){
+    .form-heading{
+        font-size: 0.9rem;
+    } 
+}
