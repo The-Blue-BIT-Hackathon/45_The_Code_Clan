@@ -6,7 +6,7 @@ const NavbarComp = () => {
 
   return <>
      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " >
-  <a className="navbar-brand" to="/">TravelP</a>
+  <a className=" nb navbar-brand" to="/"><h6>TravelP</h6></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>

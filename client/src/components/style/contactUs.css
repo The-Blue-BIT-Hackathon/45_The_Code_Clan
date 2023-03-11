@@ -11,6 +11,11 @@
     padding: 10px 0px;
   }
   
+  @media(max-width:750px){
+    .contact{
+      height: 100vh;
+    }
+  }
   .contact:before {
     content: "";
     background: rgba(255, 255, 255, 0.7);

@@ -9,12 +9,13 @@
     font-size: 1.2rem;
 }
 
-.navbar .navbar-brand{
+.navbar .navbar-brand h6{
     font-size: 1.6rem;
     font-family: 'Rampart One', cursive;
     font-weight: 700;
     color: white;
 }
+
 
 .navbar-nav{
 margin:auto;
