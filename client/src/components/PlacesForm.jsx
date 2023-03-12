@@ -1,132 +1,257 @@
-import React from "react";
-import "./style/placeForm.css"
+import React, { useEffect, useState } from "react";
+import "./style/placeForm.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 const PlacesForm = () => {
-  return <>
-  <section className="mainSection">
-    
-    <div className="placeForm text-center">
-      <div className="form-heading ">"PLAN,PREPARE,PROCEED WITH YOUR TRAVEL DREAMS"</div>
+  const navigate = useNavigate();
 
-      <form className="form-structure ">
-    <div className="row r1">
-        <div className="col">
-            <div className="form-outline"> 
-            {/* <label  className="form-label">Desitination district</label> */}
-            <select id="inputState" htmlFor="district" className="form-control text-center">
-              <option selected disabled>Desitination district</option>
-              <option>Akola</option>
-              <option>Ahmednagar</option>
-              <option>Amravati</option>
-              <option>Sambhaji Nagar</option>
-              <option>Beed</option>
-              <option>Bhandara</option>
-              <option>Buldhana</option>
-              <option>Chandrapur</option>
-              <option>Dhule</option>
-              <option>Gadchiroli</option>
-              <option>Gondia</option>
-              <option>Hingoli</option>
-              <option>Jalgaon</option>
-              <option>Jalna</option>
-              <option>Kolhapur</option>
-              <option>Latur</option>
-              <option>Mumbai</option>
-              <option>Nagpur</option>
-              <option>Nandurbar</option>
-              <option>Nashik</option>
-              <option>Nanded</option>
-              <option>Osmanabad</option>
-              <option>Parbhani</option>
-              <option>Pune</option>
-              <option>Raigad</option>
-              <option>Ratnagiri</option>
-              <option>Sangli</option>
-              <option>Satara</option>
-              <option>Sindhudurg</option>
-              <option>Solapur</option>
-              <option>Thane</option>
-              <option>Wardha</option>
-              <option>Yavatmal</option>
-            </select>
+  const [formData, setFormData] = useState({
+    district: "",
+    region: "",
+    activity: "",
+    price_range: "",
+    recommended_for: "",
+  });
 
+  useEffect(() => {
+    console.log("fornmdata", formData);
+  }, [formData]);
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    console.log("fornmdata", formData);
+
+    axios
+      .post("http://ayush45.pythonanywhere.com/get_destination", formData)
+      .then((response) => {
+        console.log("Data sent successfully", response.data);
+        localStorage.setItem("myData", JSON.stringify(response.data));
+        window.location.href = "/PlaceResult";
+        navigate("/PlaceResult");
+      })
+      .catch((error) => {
+        console.log("Error sending data", error);
+      });
+
+    // console.log("button clicked");
+
+    // Extract form data from the event object
+    // const { district, region, price_range, activity, recommended_for } = formData;
+
+    // Construct the JSON object from the form data
+    // const formDataJson = {
+    //   district,
+    //   region,
+    //   price_range,
+    //   activity,
+    //   recommended_for,
+    // };
+
+    // console.log("formdatajson", formDataJson);
+    // Do something with the formDataJson, e.g. send it to a server via API
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
+
+  return (
+    <>
+      <section className="mainSection">
+        <div className="placeForm text-center">
+          <div className="form-heading ">
+            "PLAN,PREPARE,PROCEED WITH YOUR TRAVEL DREAMS"
+          </div>
+
+          <form className="form-structure " onSubmit={handleFormSubmit}>
+            <div className="row r1">
+              <div className="col">
+                <div className="form-outline">
+                  {/* <label  className="form-label">Desitination district</label> */}
+                  <select
+                    id="district"
+                    name="district"
+                    className="form-control text-center"
+                    value={formData.district}
+                    onChange={handleInputChange}
+                  >
+                    <option defaultValue disabled>
+                      Desitination district
+                    </option>
+                    <option value="Akola">Akola</option>
+                    <option value="Ahmednagar">Ahmednagar</option>
+                    <option value="Amravati">Amravati</option>
+                    <option value="Sambhaji Nagar">Sambhaji Nagar</option>
+                    <option value="Beed">Beed</option>
+                    <option value="Bhandara">Bhandara</option>
+                    <option value="Buldhana">Buldhana</option>
+                    <option value="Chandrapur">Chandrapur</option>
+                    <option value="Dhule">Dhule</option>
+                    <option value="Gadchiroli">Gadchiroli</option>
+                    <option value="Gondia">Gondia</option>
+                    <option value="Hingoli">Hingoli</option>
+                    <option value="Jalgaon">Jalgaon</option>
+                    <option value="Jalna">Jalna</option>
+                    <option value="Kolhapur">Kolhapur</option>
+                    <option value="Latur">Latur</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Nandurbar">Nandurbar</option>
+                    <option value="Nashik">Nashik</option>
+                    <option value="Nanded">Nanded</option>
+                    <option value="Osmanabad">Osmanabad</option>
+                    <option value="Parbhani">Parbhani</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Raigad">Raigad</option>
+                    <option value="Ratnagiri">Ratnagiri</option>
+                    <option value="Sangli">Sangli</option>
+                    <option value="Satara">Satara</option>
+                    <option value="Sindhudurg">Sindhudurg</option>
+                    <option value="Solapur">Solapur</option>
+                    <option value="Thane">Thane</option>
+                    <option value="Wardha">Wardha</option>
+                    <option value="Yavatmal">Yavatmal</option>
+                  </select>
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-outline">
+                  {/* <label  className="form-label">Region</label> */}
+                  <select
+                    id="inputState"
+                    name="region"
+                    className="form-control text-center"
+                    value={formData.region}
+                    onChange={handleInputChange}
+                  >
+                    <option defaultValue disabled>
+                      Region
+                    </option>
+                    <option value="Northern Maharastra">
+                      Northern Maharastra
+                    </option>
+                    <option value="Vidharbha">Vidharbha</option>
+                    <option value="Marathwada">Marathwada</option>
+                    <option value="Western Maharastra">
+                      Western Maharastra
+                    </option>
+                    <option value="Kokan">Kokan</option>
+                  </select>
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-outline">
+                  {/* <label  className="form-label">Budget price_range</label> */}
+                  <select
+                    id="inputState"
+                    name="price_range"
+                    className="form-control text-center"
+                    value={formData.price_range}
+                    onChange={handleInputChange}
+                  >
+                    <option defaultValue disabled>
+                      Budget price_range
+                    </option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </div>
+              </div>
             </div>
-        </div>
-        <div className="col">
-            <div className="form-outline">
-            {/* <label  className="form-label">Region</label> */}
-            <select id="inputState" htmlFor="region" className="form-control text-center">
-              <option selected disabled>Region</option>
-              <option>Northern Maharastra</option>
-              <option>Vidharbha</option>
-              <option>Marathwada</option>
-              <option>Western Maharastra</option>
-              <option>Kokan</option>
-            </select>
+
+            <div className="row r2">
+              <div className="col">
+                <div className="form-outline">
+                  {/* <label  className="form-label">activity to Perform</label> */}
+                  <select
+                    id="inputState"
+                    name="activity"
+                    className="form-control text-center"
+                    value={formData.activity}
+                    onChange={handleInputChange}
+                  >
+                    <option defaultValue disabled>
+                      activity to Perform
+                    </option>
+                    <option value="Religious Tourism">
+                      Religious Tourism{" "}
+                    </option>
+                    <option value="Wildlife Safari, Bird Watching">
+                      Wildlife Safari,Bird Watching{" "}
+                    </option>
+                    <option value="Trekking, Sightseeing">
+                      Trekking, Sightseeing{" "}
+                    </option>
+                    <option value="Trekking, Waterfalls, Caves">
+                      Trekking, Waterfalls, Caves{" "}
+                    </option>
+                    <option value="Heritage Tourism, Caves">
+                      Heritage Tourism, Caves{" "}
+                    </option>
+                    <option value="Heritage Tourism, Sightseeing">
+                      Heritage Tourism, Sightseeing{" "}
+                    </option>
+                    <option value="Trekking, Wildlife Sanctuary">
+                      Trekking, Wildlife Sanctuary{" "}
+                    </option>
+                    <option value="Sightseeing">Sightseeing </option>
+                    <option value="Science">Science </option>
+                    <option value="">Sightseeing,water sports </option>
+                    <option value="">Water Sports, Fort </option>
+                    <option value="Hill Station">Hill Station </option>
+                    <option value="Beach,  Water Sports">
+                      Beach, Water Sports{" "}
+                    </option>
+                    <option value="Aashram">Aashram </option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="col">
+                <div className="form-outline">
+                  {/* <label  className="form-label">Recomended For</label> */}
+                  <select
+                    id="inputState"
+                    name="recommended_for"
+                    className="form-control text-center"
+                    value={formData.recommended_for}
+                    onChange={handleInputChange}
+                  >
+                    <option defaultValue disabled>
+                      Recomended For
+                    </option>
+                    <option value="Families &Senior Citizens">
+                      Families and Senior Citizens
+                    </option>
+                    <option value="Wildlife Enthusiasts">
+                      Wildlife Enthusiast
+                    </option>
+                    <option value="History Buffs & Solo Travelers">
+                      History Buffs and Solo Travelers
+                    </option>
+                    <option value="Couples & Friends">Couples & Friends</option>
+                    <option value="Adventure Seekers">Adventure Seekers</option>
+                  </select>
+                </div>
+              </div>
             </div>
+
+            <button
+              type="submit"
+              htmlFor="submit"
+              className="btn btn-info btn-block Predict"
+            >
+              Suggest
+            </button>
+          </form>
         </div>
-        <div className="col">
-            <div className="form-outline">
-            {/* <label  className="form-label">Budget Range</label> */}
-            <select id="inputState" htmlFor="range" className="form-control text-center">
-              <option selected disabled>Budget Range</option>
-              <option>High</option>
-              <option>Medium</option>
-              <option>Low</option>
-            </select>
-            </div>
-        </div>
-    </div>
-
-    <div className="row r2">
-        <div className="col">
-        <div className="form-outline">
-            {/* <label  className="form-label">Activities to Perform</label> */}
-            <select id="inputState" htmlFor="activities" className="form-control text-center">
-              <option selected disabled>Activities to Perform</option>
-               <option value="">Religious Tourism </option>
-               <option value="">Wildlife Safari,Bird Watching </option>
-               <option value="">Trekking, Sightseeing </option>
-               <option value="">Trekking, Waterfalls, Caves </option>
-               <option value="">Heritage Tourism, Caves </option>
-               <option value="">Heritage Tourism, Sightseeing </option>
-               <option value="">Trekking, Wildlife Sanctuary </option>
-               <option value="">Trekking,Sightseeing </option>
-               <option value="">Sightseeing </option>
-               <option value="">Beach,  Water Sports </option>
-               <option value="">Science </option>
-               <option value="">Sightseeing,water sports </option>
-               <option value="">Water Sports, Fort </option>
-               <option value="">Hill Station </option>
-               <option value="">Beach, Water Sports </option>
-               <option value="">Aashram </option>
-            </select>
-            </div>
-        </div>
-
-        <div className="col">
-        <div className="form-outline">
-            {/* <label  className="form-label">Recomended For</label> */}
-            <select id="inputState"  htmlFor="recommendedFor" className="form-control text-center">
-              <option selected disabled>Recomended For</option>
-              <option>Families and Senior Citizens</option>
-              <option>Wildlife Enthusiast</option>
-              <option>History Buffs and Solo Travelers</option>
-              <option>Couples & Friends</option>
-              <option>Wildlife Enthusiasts', 'Families  &Senior Citizens</option>
-              <option>Adventure Seekers</option>
-            </select>
-            </div>
-        </div>
-    </div>
-
-   
-    <button type="submit" htmlFor="submit" className="btn btn-info btn-block Predict">Suggest</button>
-
-</form>
-    </div>
-
-  </section>
-  </>;
+      </section>
+    </>
+  );
 };
 
 export default PlacesForm;
