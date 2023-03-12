@@ -33,6 +33,7 @@ const PlacesForm = () => {
       })
       .catch((error) => {
         console.log("Error sending data", error);
+        alert(" No Destination Found");
       });
 
     // console.log("button clicked");
@@ -78,9 +79,7 @@ const PlacesForm = () => {
                     value={formData.district}
                     onChange={handleInputChange}
                   >
-                    <option defaultValue disabled>
-                      Desitination district
-                    </option>
+                    <option defaultValue>Desitination district</option>
                     <option value="Akola">Akola</option>
                     <option value="Ahmednagar">Ahmednagar</option>
                     <option value="Amravati">Amravati</option>
@@ -127,9 +126,7 @@ const PlacesForm = () => {
                     value={formData.region}
                     onChange={handleInputChange}
                   >
-                    <option defaultValue disabled>
-                      Region
-                    </option>
+                    <option defaultValue>Region</option>
                     <option value="Northern Maharastra">
                       Northern Maharastra
                     </option>
@@ -152,9 +149,7 @@ const PlacesForm = () => {
                     value={formData.price_range}
                     onChange={handleInputChange}
                   >
-                    <option defaultValue disabled>
-                      Budget price_range
-                    </option>
+                    <option defaultValue>Budget price_range</option>
                     <option value="High">High</option>
                     <option value="Medium">Medium</option>
                     <option value="Low">Low</option>
@@ -174,9 +169,7 @@ const PlacesForm = () => {
                     value={formData.activity}
                     onChange={handleInputChange}
                   >
-                    <option defaultValue disabled>
-                      activity to Perform
-                    </option>
+                    <option defaultValue>activity to Perform</option>
                     <option value="Religious Tourism">
                       Religious Tourism{" "}
                     </option>
@@ -200,11 +193,15 @@ const PlacesForm = () => {
                     </option>
                     <option value="Sightseeing">Sightseeing </option>
                     <option value="Science">Science </option>
-                    <option value="">Sightseeing,water sports </option>
-                    <option value="">Water Sports, Fort </option>
+                    <option value="Sightseeing,water sports">
+                      Sightseeing,water sports{" "}
+                    </option>
+                    <option value="Water Sports, Fort">
+                      Water Sports, Fort{" "}
+                    </option>
                     <option value="Hill Station">Hill Station </option>
                     <option value="Beach,  Water Sports">
-                      Beach, Water Sports{" "}
+                      Beach, Water Sports
                     </option>
                     <option value="Aashram">Aashram </option>
                   </select>
@@ -221,9 +218,7 @@ const PlacesForm = () => {
                     value={formData.recommended_for}
                     onChange={handleInputChange}
                   >
-                    <option defaultValue disabled>
-                      Recomended For
-                    </option>
+                    <option defaultValue>Recomended For</option>
                     <option value="Families &Senior Citizens">
                       Families and Senior Citizens
                     </option>

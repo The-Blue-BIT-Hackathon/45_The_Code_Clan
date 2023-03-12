@@ -1,0 +1,46 @@
+.Output {
+  margin-top: 12vh;
+  height: 55vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 45vh;
+}
+
+.nameHeading {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: slategray;
+  font-family: "Rubik", sans-serif;
+}
+
+.descp {
+  text-align: justify;
+  padding: 20px;
+  font-family: "Signika", sans-serif;
+  font-size: 1.1rem;
+}
+
+.photo img {
+  max-width: 80%;
+  max-height: 45%;
+  align-items: center;
+}
+.photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 750px) {
+  .photo img {
+    max-height: 80%;
+    max-width: 95%;
+  }
+  .nameHeading {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+}

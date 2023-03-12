@@ -1,29 +1,40 @@
-.navbar{
-    height: 10vh;
-    padding: 0px 5vw ;
-    
+.navbar {
+  height: 12vh;
+  padding: 0px 5vw;
+  background-color: #000000e6;
 }
 
-.nav-link{
-    font-family: 'Signika', sans-serif;
-    font-size: 1.2rem;
+.nav-link {
+  font-family: "Signika", sans-serif;
+  font-size: 1.2rem;
 }
 
-.navbar .navbar-brand h6{
-    font-size: 1.6rem;
-    font-family: 'Rampart One', cursive;
-    font-weight: 700;
-    color: white;
+.navbar .navbar-brand h6 {
+  font-size: 1.6rem;
+  font-family: "Rampart One", cursive;
+  font-weight: 700;
+  color: white;
 }
 
-
-.navbar-nav{
-margin:auto;
+.navbar-nav {
+  margin-right: auto;
 }
 
-.active{
-    color: azure;
+.active {
+  color: azure;
 }
-.nav-item{
-    margin: 0px 17px;
+.nav-item {
+  margin: 0px 17px;
+}
+
+.logo {
+  height: 150px;
+  width: 200px;
+}
+
+@media (max-width: 750px) {
+  .logo {
+    height: 105px;
+    width: 100px;
+  }
 }
