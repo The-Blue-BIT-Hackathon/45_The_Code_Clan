@@ -6,7 +6,7 @@
     /* background: url("../img/contact-bg.png") left center no-repeat; */
     position: relative;
     margin:  40px auto;
-    background-color: #92f1ff;
+    background-color:  #fffd92d6;
     height: 65vh;
     padding: 10px 0px;
   }
@@ -81,7 +81,7 @@
   
   .contact .php-email-form {
     width: 100%;
-    background: #9ff3ff8c;
+    background:  #fcfa8ab7;
     border-radius: 9px;
     padding: 8px;
   }

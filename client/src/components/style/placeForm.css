@@ -4,12 +4,14 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    background-image: url("../../images/bag2.jpg");
-    background-position: center;
+    background-image: url("../../images/bag4.jpg");
+    max-width: 100%;
+
+    object-fit: cover;
 }
 
 .placeForm{
-    background-color:  #92f1ff5e;
+    background-color:  #fffd9242;
     width: 70%;
     margin: auto;
     height: 55%;
@@ -21,8 +23,8 @@
     display: inline;
     font-size: 1.8rem;
     font-family: 'Rubik', sans-serif;
-    color:slategrey;
-    font-weight: 500;
+    color:white;
+    font-weight: 600;
 }
 @media(max-width:800px){
     .form-heading{
