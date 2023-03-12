@@ -1,4 +1,5 @@
 import React from "react";
+import Hotels from "../components/Hotels";
 
 const data = JSON.parse(localStorage.getItem("myData"));
 console.log(data);
@@ -10,6 +11,7 @@ const PlaceResult = () => {
     <>
       <div>{data.name}</div>
       <div>{data.description}</div>
+      <Hotels />
     </>
   );
 };

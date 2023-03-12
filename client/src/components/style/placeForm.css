@@ -1,97 +1,91 @@
-.mainSection{
-    height: 85vh;
-    margin-top:10vh;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    background-image: url("../../images/bag4.jpg");
-    max-width: 100%;
+.mainSection {
+  height: 105vh;
+  margin-top: 10vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-image: url("../../images/bag4.jpg");
+  max-width: 100%;
 
-    object-fit: cover;
+  object-fit: cover;
 }
 
-.placeForm{
-    background-color:  #fffd9242;
-    width: 70%;
-    margin: auto;
-    height: 55%;
-    padding: 20px;
-    border-radius: 18px;
+.placeForm {
+  background-color: #fffd9242;
+  width: 70%;
+  margin: auto;
+  height: 55%;
+  padding: 20px;
+  border-radius: 18px;
 }
 
-.form-heading{
-    display: inline;
-    font-size: 1.8rem;
-    font-family: 'Rubik', sans-serif;
-    color:white;
-    font-weight: 600;
+.form-heading {
+  display: inline;
+  font-size: 1.8rem;
+  font-family: "Rubik", sans-serif;
+  color: white;
+  font-weight: 600;
 }
-@media(max-width:800px){
-    .form-heading{
-        font-size: 1.2rem;
-    } 
+@media (max-width: 800px) {
+  .form-heading {
+    font-size: 1.2rem;
+  }
 }
-@media(max-width:600px){
-    .form-heading{
-        font-size: 0.9rem;
-    } 
-}
-
-
-.form-structure{
-    margin-top: 20px;
+@media (max-width: 600px) {
+  .form-heading {
+    font-size: 0.9rem;
+  }
 }
 
-.form-label{
-    text-align: left;
-    margin: 10px 0px ;
-
+.form-structure {
+  margin-top: 20px;
 }
 
-.form-outline select{
-margin:20px 0px ;
-border-radius: 14px;
-font-family: 'Signika', sans-serif;
-
-font-size: 18px;
+.form-label {
+  text-align: left;
+  margin: 10px 0px;
 }
 
-.col{
-margin: 5px;
+.form-outline select {
+  margin: 20px 0px;
+  border-radius: 14px;
+  font-family: "Signika", sans-serif;
+
+  font-size: 18px;
 }
 
-.Predict{
-    width: 150px;
+.col {
+  margin: 5px;
+}
+
+.Predict {
+  width: 150px;
+  margin-left: auto;
+  margin-right: 25px;
+  margin-top: 25px;
+  font-family: "Changa", sans-serif;
+  font-size: 1.1rem;
+}
+
+.r1 select {
+  width: 18vw;
+}
+@media (max-width: 750px) {
+  .r1 select {
+    width: 50vw;
     margin-left: auto;
-    margin-right: 25px;
-    margin-top: 25px;
-    font-family: 'Changa', sans-serif;
-    font-size: 1.1rem;
-}
+    margin-right: auto;
+  }
+  .r2 select {
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .Predict {
+    margin-right: auto;
+  }
 
-
-.r1 select{
-     width: 18vw;
-}
-@media(max-width:750px){
-    .r1 select{
-        width: 50vw;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .r2 select{
-        width: 50vw;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .Predict{
-        margin-right: auto;  
-    }
-    
-    .placeForm{
-
-        height: 90%;
-    }
-
-
+  .placeForm {
+    height: 90%;
+  }
 }

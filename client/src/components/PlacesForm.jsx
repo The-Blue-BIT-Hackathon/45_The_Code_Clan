@@ -3,7 +3,7 @@ import "./style/placeForm.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const PlacesForm = () => {
+const PlacesForm = async () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -18,12 +18,12 @@ const PlacesForm = () => {
     console.log("fornmdata", formData);
   }, [formData]);
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     console.log("fornmdata", formData);
 
-    axios
+    await axios
       .post("http://ayush45.pythonanywhere.com/get_destination", formData)
       .then((response) => {
         console.log("Data sent successfully", response.data);
