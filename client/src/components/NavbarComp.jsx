@@ -1,13 +1,13 @@
 import React from "react";
 import "./style/navbarComp.css";
 import logo from "../images/logo.png";
-import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
 
 const NavbarComp = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark  fixed-top ">
-        <a className=" nb navbar-brand" to="/">
+        <a className=" nb navbar-brand" href="/">
           <img src={logo} alt="" className="logo" />
         </a>
         <button
@@ -25,17 +25,17 @@ const NavbarComp = () => {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ">
             <li className="nav-item active">
-              <a className="nav-link" to="/">
+              <a className="nav-link" href="/">
                 Home <span className="sr-only">(current)</span>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" to="#">
+              <a className="nav-link" href="/">
                 Plan
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" to="#">
+              <a className="nav-link" href="/">
                 Book
               </a>
             </li>
