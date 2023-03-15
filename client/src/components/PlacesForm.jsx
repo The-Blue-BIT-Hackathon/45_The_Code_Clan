@@ -141,13 +141,13 @@ const PlacesForm = () => {
                     onChange={handleInputChange}
                   >
                     <option defaultValue>Region</option>
-                    <option value="Northern Maharastra">
-                      Northern Maharastra
+                    <option value="Northern Maharashtra">
+                      Northern Maharashtra
                     </option>
                     <option value="Vidharbha">Vidharbha</option>
                     <option value="Marathwada">Marathwada</option>
-                    <option value="Western Maharastra">
-                      Western Maharastra
+                    <option value="Western Maharashtra">
+                      Western Maharashtra
                     </option>
                     <option value="Kokan">Kokan</option>
                   </select>
