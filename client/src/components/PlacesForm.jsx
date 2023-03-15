@@ -3,6 +3,9 @@ import "./style/placeForm.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import { useTranslation } from "react-i18next";
+// import i18n from "i18next";
+
 const PlacesForm = () => {
   const navigate = useNavigate();
 
@@ -59,13 +62,23 @@ const PlacesForm = () => {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
+  const { t } = useTranslation();
+
+  // i18n.changeLanguage("mr");
+
+  // const changeLanguage = (lng) => {
+  //   i18n.changeLanguage(lng);
+  // };
+
   return (
     <>
       <section className="mainSection">
+        {/* <div>
+          <button onClick={() => changeLanguage("en")}>English</button>
+          <button onClick={() => changeLanguage("mr")}>Marathi</button>
+        </div> */}
         <div className="placeForm text-center">
-          <div className="form-heading ">
-            "PLAN,PREPARE,PROCEED WITH YOUR TRAVEL DREAMS"
-          </div>
+          <div className="form-heading ">{t("formTitle")}</div>
 
           <form className="form-structure " onSubmit={handleFormSubmit}>
             <div className="row r1">

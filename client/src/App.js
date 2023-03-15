@@ -1,14 +1,22 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import Navbar1 from "./components/NavbarComp";
+import NavbarComp from "./components/NavbarComp";
 import Footer from "./components/Footer";
 import PlaceResult from "./pages/PlaceResult";
 
+import i18n from "i18next";
+
 function App() {
+  // i18n.changeLanguage("mr");
+
+  // const changeLanguage = (lng) => {
+  //   i18n.changeLanguage(lng);
+  // };
+
   return (
     <div className="App">
-      <Navbar1 />
+      <NavbarComp lang={"en"} />
       <Router>
         <Routes>
           <Route exact path="/" element={<HomePage />} />

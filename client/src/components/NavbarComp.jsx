@@ -2,8 +2,14 @@ import React from "react";
 import "./style/navbarComp.css";
 import logo from "../images/logo.png";
 // import { Link, useNavigate } from "react-router-dom";
+import i18n from "i18next";
 
-const NavbarComp = () => {
+const NavbarComp = ({ lang }) => {
+  i18n.changeLanguage(lang);
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark  fixed-top ">
@@ -40,6 +46,10 @@ const NavbarComp = () => {
               </a>
             </li>
           </ul>
+          <div>
+            <button onClick={() => changeLanguage("en")}>English</button>
+            <button onClick={() => changeLanguage("mr")}>Marathi</button>
+          </div>
         </div>
       </nav>
     </>
