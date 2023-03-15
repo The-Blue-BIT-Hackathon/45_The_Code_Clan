@@ -88,9 +88,10 @@ const PlacesForm = () => {
                   <select
                     id="district"
                     name="district"
-                    className="form-control text-center"
+                    className=" formin text-center"
                     value={formData.district}
                     onChange={handleInputChange}
+                
                   >
                     <option defaultValue>Desitination district</option>
                     <option value="Akola">Akola</option>
@@ -135,7 +136,7 @@ const PlacesForm = () => {
                   <select
                     id="inputState"
                     name="region"
-                    className="form-control text-center"
+                    className=" formin text-center"
                     value={formData.region}
                     onChange={handleInputChange}
                   >
@@ -158,7 +159,7 @@ const PlacesForm = () => {
                   <select
                     id="inputState"
                     name="price_range"
-                    className="form-control text-center"
+                    className=" formin text-center"
                     value={formData.price_range}
                     onChange={handleInputChange}
                   >
@@ -178,7 +179,7 @@ const PlacesForm = () => {
                   <select
                     id="inputState"
                     name="activity"
-                    className="form-control text-center"
+                    className=" formin text-center"
                     value={formData.activity}
                     onChange={handleInputChange}
                   >
@@ -227,7 +228,7 @@ const PlacesForm = () => {
                   <select
                     id="inputState"
                     name="recommended_for"
-                    className="form-control text-center"
+                    className=" formin text-center"
                     value={formData.recommended_for}
                     onChange={handleInputChange}
                   >

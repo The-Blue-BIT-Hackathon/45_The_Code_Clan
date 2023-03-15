@@ -47,10 +47,6 @@
 
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
-.container {
-  margin-top: 100px;
-  display: flex;
-}
 
 .rating {
   position: relative;
