@@ -28,8 +28,8 @@ import {
 
 const data = JSON.parse(localStorage.getItem("myData"));
 console.log(data);
-console.log("name: ", data.context.name);
-console.log("desc: ", data.context.description);
+console.log("name: ", data?.context?.name);
+console.log("desc: ", data?.context?.description);
 
 const icons = {
   star: {
@@ -61,7 +61,7 @@ const PlaceResult = () => {
       lang: "en_US",
     },
     headers: {
-      "X-RapidAPI-Key": "544c68c18fmsh5cd02ddc3b2804dp101397jsnfe432c21af29",
+      "X-RapidAPI-Key": "2df90b4889msh32dcc7728719a7cp18d2e0jsne7949d44abff",
       "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
     },
   };
@@ -91,7 +91,8 @@ const PlaceResult = () => {
     };
 
     fetchData();
-  });
+    // eslint-disable-next-line
+  }, []);
 
   // var map = L.map("map").setView([51.5, -0.1], 12);
   // L.tileLayer(
@@ -108,13 +109,13 @@ const PlaceResult = () => {
       {/* place result */}
       <section className="Output">
         <div className="placename">
-          <div className="nameHeading text-center">{data.context.name}</div>
-          <div className="descp">{data.context.description}</div>
+          <div className="nameHeading text-center">{data?.context?.name}</div>
+          <div className="descp">{data?.context?.description}</div>
         </div>
 
         <div className="palceImage">
           <div className="photo">
-            <img src={`${data.context.url}`} alt="" />
+            <img src={`${data?.context?.url}`} alt="" />
           </div>
         </div>
       </section>
@@ -211,7 +212,10 @@ const PlaceResult = () => {
             // </div>
 
             (item) => (
-              <MDBRow className="justify-content-center mb-0">
+              <MDBRow
+                className="justify-content-center mb-0"
+                key={item.result_object.location_id}
+              >
                 <MDBCol md="12" xl="10">
                   <MDBCard className="shadow-0 border rounded-3 mt-5 mb-3">
                     <MDBCardBody>
