@@ -25,12 +25,12 @@ import {
   faHeart as farHeart,
   faStar as farStar,
 } from "@fortawesome/free-regular-svg-icons";
-import { useHref } from "react-router-dom";
+import { useHref, useLocation, useParams } from "react-router-dom";
 
-const data = JSON.parse(localStorage.getItem("myData"));
-console.log(data);
-console.log("name: ", data?.context?.name);
-console.log("desc: ", data?.context?.description);
+// const data = JSON.parse(localStorage.getItem("myData"));
+// console.log(data);
+// console.log("name: ", data?.context?.name);
+// console.log("desc: ", data?.context?.description);
 
 const icons = {
   star: {
@@ -50,13 +50,23 @@ const colors = {
   heart: ["#9b111e", "#a83f39"],
 };
 
+const dataPlace = JSON.parse(localStorage.getItem("oneplace"));
+console.log(dataPlace);
 
 const PlaceResult = () => {
+  // const { place, description, url } = useParams();
+  // const location = useLocation();
+  // const place = location.state.place;
+  // const description = location.state.description;
+  // const url = location.state.url;
+
+  // console.log(place);
+  // console.log(description);
+  // console.log(url);
   // const [city, setCity] = useState();
-  
   // setCity("Shegaon")
 
-  let city = "Sindhudurg"
+  let city = dataPlace.context.city;
 
   const options = {
     method: "GET",
@@ -96,7 +106,6 @@ const PlaceResult = () => {
         .catch(function (error) {
           console.error(error);
           alert("no hotels found");
-          
         });
     };
 
@@ -119,13 +128,15 @@ const PlaceResult = () => {
       {/* place result */}
       <section className="Output">
         <div className="placename">
-          <div className="nameHeading text-center">{data?.context?.name}</div>
-          <div className="descp">{data?.context?.description}</div>
+          <div className="nameHeading text-center">
+            {dataPlace.context?.name}
+          </div>
+          <div className="descp">{dataPlace.context?.description}</div>
         </div>
 
         <div className="palceImage">
           <div className="photo">
-            <img src={`${data?.context?.url}`} alt="" />
+            <img src={`${dataPlace.context?.url}`} alt="" />
           </div>
         </div>
       </section>
