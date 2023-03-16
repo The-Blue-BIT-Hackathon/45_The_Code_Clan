@@ -47,8 +47,8 @@ const NavbarComp = ({ lang }) => {
             </li>
           </ul>
           <div>
-            <button onClick={() => changeLanguage("en")}>English</button>
-            <button onClick={() => changeLanguage("mr")}>Marathi</button>
+            <button className="Predict" onClick={() => changeLanguage("en")}>English</button>
+            <button className="Predict"  onClick={() => changeLanguage("mr")}>Marathi</button>
           </div>
         </div>
       </nav>

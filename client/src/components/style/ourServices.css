@@ -103,3 +103,33 @@
   .services .card:hover .card-body .card-title a {
     color: #fdc134;
   }
+
+
+
+
+
+  /* wHY SECTION */
+
+  .whySection{
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+
+  }
+  .whySection .section-title h2{
+    color: slategrey;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.8rem;
+
+  }
+
+  .whySection .container{
+    padding: 2.5vw;
+  }
+
+  .whySection .container .Descrp p{
+
+    
+    font-family: 'Signika', sans-serif;
+    font-size: 20px;
+    text-align: justify;
+  }
