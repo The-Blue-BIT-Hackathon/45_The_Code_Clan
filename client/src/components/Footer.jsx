@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="shadow-lg bg-dark mt-4"
-        style={{ color: "white", padding: "0px 5vw" }}
+        className="shadow-lg bg-dark mt-4" data-role="footer" data-position="fixed"
+        style={{ color: "white", padding: "0px 5vw", width:"100%"}}
       >
         <div
           className="d-flex justify-content-between align-items-center mx-auto py-4 flex-wrap"
@@ -21,9 +21,9 @@ const Footer = () => {
           </a>
           <small>&copy; मायBHUMI , 2023. All rights reserved.</small>
           <div>
-            <i className="fa fa-facebook"></i>
-            <i className="fa fa-twitter"></i>
-            <i className="fa fa-instagram"></i>
+          <ion-icon name="logo-instagram" size="large"><a href=""></a></ion-icon>
+          <ion-icon name="logo-twitter" size="large"></ion-icon>
+          <ion-icon name="logo-linkedin" size="large"></ion-icon>
           </div>
         </div>
       </footer>

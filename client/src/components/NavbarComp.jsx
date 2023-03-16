@@ -46,10 +46,10 @@ const NavbarComp = ({ lang }) => {
               </a>
             </li>
           </ul>
-          <div>
+          {/* <div>
             <button className="Predict" onClick={() => changeLanguage("en")}>English</button>
             <button className="Predict"  onClick={() => changeLanguage("mr")}>Marathi</button>
-          </div>
+          </div> */}
         </div>
       </nav>
     </>

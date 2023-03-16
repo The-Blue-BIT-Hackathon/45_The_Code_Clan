@@ -200,27 +200,28 @@
 
 .change_content:after {
   content: "";
-  animation: changetext 10s infinite linear;
-  color:#ff962d;
+  animation: changetext 7s infinite linear;
+  color:#f99d41;
+  font-family: "Rubik", sans-serif;
 }
 
 @keyframes changetext {
   0% {
-    content: "";
+    content: "Mumbai";
   }
   20% {
-    content: "Agra";
+    content: "Raigad";
   }
   35% {
-    content: "Jaipur";
+    content: "Tuljapur";
   }
   60% {
-    content: "kerala";
+    content: "Tadoba";
   }
   80% {
-    content: "delhi";
+    content: "Tarkali-beach";
   }
   100% {
-    content: "Mumbai";
+    content: "..and Many more";
   }
 }
