@@ -718,6 +718,39 @@ const PlaceResult = () => {
             )
           )}
       </MDBContainer>
+
+      <div className="review">
+       <div className="review-heading">
+             Write A Review Of your Experience. 
+       </div>
+     <div className="rate">
+         <select id="input"  name="rate"
+                     className="form-control text-center"
+                   >
+                     <option defaultValue>Rate Your Trip.</option>
+                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                     <option value="5">5</option>
+                    
+                   </select>
+     </div>
+
+       <div className="md-form amber-textarea active-amber-textarea-2 review-text ">
+         <textarea id="form16" className="md-textarea form-control Rt " rows="3" placeholder="Write Your Text Here...."></textarea>
+
+       </div>
+
+
+//       <div className="submit-review">
+//         <button className="btn btn-outline  post-r ">Post the Review </button>
+//       </div>
+//     </div>
+
+
+
+      
     </>
   );
 };

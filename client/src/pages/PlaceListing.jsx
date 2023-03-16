@@ -279,7 +279,7 @@ const PlaceListing = () => {
       <MDBContainer fluid style={{marginBottom:"120vh"}}>
         {data.context &&
           data.context.map((item) => (
-            <MDBRow className="justify-content-center mb-0" key={item.name}>
+            <MDBRow className="justify-content-center mb-0 mt-5" key={item.name}>
               <MDBCol md="12" xl="10">
                 <MDBCard className="shadow-0 border rounded-3 mt-5 mb-3">
                   <MDBCardBody>
