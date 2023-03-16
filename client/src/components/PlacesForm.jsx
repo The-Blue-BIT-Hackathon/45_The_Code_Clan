@@ -64,19 +64,32 @@ const PlacesForm = () => {
 
   const { t } = useTranslation();
 
-  // i18n.changeLanguage("mr");
+  // const [formdisplay, setFormdisplay] = useState("none");
+  // const [bannerdisplay, setBannerdisplay] = useState("flex");
 
-  // const changeLanguage = (lng) => {
-  //   i18n.changeLanguage(lng);
+  // const handleExplore = () => {
+  //   setFormdisplay("grid");
   // };
 
-  return (
+  const setDisplayProperty = (id, value) => {
+    const element = document.getElementById(id);
+    element.style.display = value;
+  };
+
+  
+  // i18n.changeLanguage("mr");
+  
+  // const changeLanguage = (lng) => {
+    //   i18n.changeLanguage(lng);
+    // };
+    
+    return (
     <>
-      <section className="mainSection">
         {/* <div>
           <button onClick={() => changeLanguage("en")}>English</button>
           <button onClick={() => changeLanguage("mr")}>Marathi</button>
         </div> */}
+      <section className="mainSection" id="FormSec" style={{display:"none"}}>
         <div className="placeForm text-center">
           <div className="form-heading ">{t("formTitle")}</div>
 
@@ -84,7 +97,7 @@ const PlacesForm = () => {
             <div className="row r1">
               <div className="col">
                 <div className="form-outline">
-                  {/* <label  className="form-label">Desitination district</label> */}
+                  
                   <select
                     id="district"
                     name="district"
@@ -132,7 +145,7 @@ const PlacesForm = () => {
               </div>
               <div className="col">
                 <div className="form-outline">
-                  {/* <label  className="form-label">Region</label> */}
+                  
                   <select
                     id="inputState"
                     name="region"
@@ -155,7 +168,7 @@ const PlacesForm = () => {
               </div>
               <div className="col">
                 <div className="form-outline">
-                  {/* <label  className="form-label">Budget price_range</label> */}
+                  
                   <select
                     id="inputState"
                     name="price_range"
@@ -175,7 +188,7 @@ const PlacesForm = () => {
             <div className="row r2">
               <div className="col">
                 <div className="form-outline">
-                  {/* <label  className="form-label">activity to Perform</label> */}
+                  
                   <select
                     id="inputState"
                     name="activity"
@@ -224,7 +237,7 @@ const PlacesForm = () => {
 
               <div className="col">
                 <div className="form-outline">
-                  {/* <label  className="form-label">Recomended For</label> */}
+                  
                   <select
                     id="inputState"
                     name="recommended_for"
@@ -259,6 +272,20 @@ const PlacesForm = () => {
           </form>
         </div>
       </section>
+      
+      <section className="banner" id="Banner" style={{display:"flex"}}>
+            
+      <h3>Mast Maharashtra</h3>
+			<h1>DO COME & VISIT <span class="change_content"> </span> <span style={{"margin-top": "-10px"}}> | </span> </h1>
+			<p>{t("formTitle")}</p>
+			<button className="btnone" onClick={() => {
+        setDisplayProperty("FormSec", "grid");
+        setDisplayProperty("Banner", "none")
+        }} >Explore</button>
+      </section>
+
+
+
     </>
   );
 };

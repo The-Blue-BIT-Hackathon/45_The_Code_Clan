@@ -25,6 +25,7 @@ import {
   faHeart as farHeart,
   faStar as farStar,
 } from "@fortawesome/free-regular-svg-icons";
+import { useHref } from "react-router-dom";
 
 const data = JSON.parse(localStorage.getItem("myData"));
 console.log(data);
@@ -49,12 +50,19 @@ const colors = {
   heart: ["#9b111e", "#a83f39"],
 };
 
+
 const PlaceResult = () => {
+  // const [city, setCity] = useState();
+  
+  // setCity("Shegaon")
+
+  let city = "Sindhudurg"
+
   const options = {
     method: "GET",
     url: "https://travel-advisor.p.rapidapi.com/locations/search",
     params: {
-      query: `shegaon, maharashtra`,
+      query: `${city}, maharashtra`,
       units: "km",
       currency: "INR",
       sort: "relevance",
@@ -77,7 +85,7 @@ const PlaceResult = () => {
           console.log("data: ", response.data);
           const filteredData = ans.data.filter(
             (item) =>
-              item.result_object.ancestors[0].name === "Shegaon" &&
+              item.result_object.ancestors[0].name === `${city}` &&
               (item.result_type === "hotel" ||
                 item.result_type === "lodging" ||
                 item.result_type === "restaurants")
@@ -87,6 +95,8 @@ const PlaceResult = () => {
         })
         .catch(function (error) {
           console.error(error);
+          alert("no hotels found");
+          
         });
     };
 
